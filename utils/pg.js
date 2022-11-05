@@ -11,14 +11,6 @@ require('dotenv').config();
 
 
 // DDBB cloud
-// const config = {
-//   user: 'bdhizqwg',
-//   password: 'kayxk33xg_rQvO41JrCaxRB9G84YlFbP',
-//   host: 'jelani.db.elephantsql.com',
-//   port: 5432,
-//   database: 'bdhizqwg'
-// }
-
 const config = {
   user: process.env.PGUSER,
   password: process.env.PGPASSWORD,
