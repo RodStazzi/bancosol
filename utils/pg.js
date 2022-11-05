@@ -1,4 +1,5 @@
 const { Pool } = require('pg');
+require('dotenv').config();
 // DDBB local
 // const config = {
 //   user: 'postgres',
@@ -10,12 +11,20 @@ const { Pool } = require('pg');
 
 
 // DDBB cloud
+// const config = {
+//   user: 'bdhizqwg',
+//   password: 'kayxk33xg_rQvO41JrCaxRB9G84YlFbP',
+//   host: 'jelani.db.elephantsql.com',
+//   port: 5432,
+//   database: 'bdhizqwg'
+// }
+
 const config = {
-  user: 'bdhizqwg',
-  password: 'kayxk33xg_rQvO41JrCaxRB9G84YlFbP',
-  host: 'jelani.db.elephantsql.com',
-  port: 5432,
-  database: 'bdhizqwg'
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  database: process.env.PGDATABASE
 }
 
 const pool = new Pool(config);

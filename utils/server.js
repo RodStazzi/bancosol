@@ -8,10 +8,11 @@
 //● /transferencias GET: Devuelve todas las transferencias almacenadas en la base de
 //datos en formato de arreglo.
 
+require('dotenv').config();
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const { insertarUsuario, usuarios, actualizarUsuario, eliminarUsuario, insertarTransaccion, transferencias } = require('./pg.js');
 

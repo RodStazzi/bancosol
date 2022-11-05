@@ -9,4 +9,4 @@ usuarios(id), FOREIGN KEY (receptor) REFERENCES usuarios(id));
 
 ALTER TABLE usuarios ADD COLUMN activo BOOLEAN DEFAULT true;
 
-
+process.env.MAIL_SERVICE
