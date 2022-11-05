@@ -216,7 +216,7 @@
     let nombre = $("form:first input:first").val();
     let balance = Number($("form:first input:nth-child(2)").val());
     try {
-      const response = await fetch("http://localhost:3000/usuario", {
+      const response = await fetch("/usuario", {
         method: "post",
         body: JSON.stringify({
           nombre,
@@ -241,7 +241,7 @@
       return false;
     }
     try {
-      const response = await fetch("http://localhost:3000/transferencia", {
+      const response = await fetch("/transferencia", {
         method: "post",
         body: JSON.stringify({
           emisor,
@@ -264,7 +264,7 @@
   });
 
   const getUsuarios = async () => {
-    const response = await fetch("http://localhost:3000/usuarios");
+    const response = await fetch("/usuarios");
     let data = await response.json();
     $(".usuarios").html("");
 
@@ -292,14 +292,14 @@
   };
 
   const eliminarUsuario = async (id) => {
-    const response = await fetch(`http://localhost:3000/usuario?id=${id}`, {
+    const response = await fetch(`/usuario?id=${id}`, {
       method: "DELETE",
     });
     getUsuarios();
   };
 
   const getTransferencias = async () => {
-    const { data } = await axios.get("http://localhost:3000/transferencias");
+    const { data } = await axios.get("/transferencias");
     $(".transferencias").html("");
 
     data.forEach((t) => {
